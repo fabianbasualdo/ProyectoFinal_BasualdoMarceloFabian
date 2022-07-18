@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--fontawesome es una pagina  que proporciona iconos, coloco la ruta, y luego copio
+    el enlace del icono ejemplo: <i class="fas fa-shopping-cart"></i>-->
+	 <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+     <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="style.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300;400;500&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <form class="form-login col-md-12 buscador-login d-flex" >
+                <input class="usuario mr-sm-md-lg-2" id="idUsuario" type="search" placeholder="Nombre de Usuario" aria-label="Search">
+
+                <input class="contrasenia mr-sm-md-lg-2" id="idContrasenia" type="search" placeholder="Contraseña de Usuario" aria-label="Search">
+
+                <button class="btn btn-outline-primary my-2 my-sm-0" id= "idbtn" type="submit">Buscar</button>
+                
+             
+            </form>
+            
+            <div id="mensajeLogin"></div>
+
+            <a href="#">MI CUENTA</a>
+            <a id="cerrarSesion" href="#">CERRAR SESION</a>
+
+
+        </nav>
+        <nav class="menues">
+            <!-- a[href="#"]{Inicio}*5-->
+
+       
+
+            <a href="#">COCINAS</a>
+            <a href="#">TERMOTANQUES</a>
+            <a href="#">HELADERAS</a>
+            <a href="#">CELULARES</a>
+            <a href="#">LAVADO-SECADO</a>
+            <a href="#">CLIMATIZACION</a>
+            <a href="#">TV</a>
+			
+			  <button id="boton-carrito">
+                    <i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span>
+                </button>
+            
+        </nav>
+        <section class="textos-header">
+            <h1 id="PotenciaVentas">Potencia tus ventas, trabaja con nosotros</h1>
+            <h2 id="CreaNegocio">Crea tu negocio con nuestras miniSucursales</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+
+    </header>
+    
+    <main class="container d-flex justify-content-around align-items-center flex-column" >
+      
+     
+        <div class="grid-container row d-flex">
+
+
+            <h3 class="col-md-12">Productos destacados</h3>
+
+            <!--/////////aside///////////-->
+            <aside class="col-md-2 d-flex flex-column ">
+                <hr>
+
+
+                <!-- CATEGORIAS-->
+                <div class="categorias">
+
+
+                    <p>Categorias:</p>
+
+                    <!--PRUEBA TEMPORAL  aa-->
+                  <select id="filtroCategoria">
+                        <option value="all">todos</option>
+                        <option value="tv">tv</option>
+                        <option value="termotanques">termotanques</option>
+                        <option value="lavado-secado">lavado-secado</option>
+                        <option value="heladeras">heladeras</option>
+                        <option value="cocinas">cocinas</option>
+                        <option value="climatizacion">climatizacion</option>
+                        <option value="celulares">celulares</option>
+                    </select>
+
+
+                    
+                </div>
+                
+            </aside>
+
+
+
+
+            <!--/////////aside///////////-->
+
+
+
+
+
+            <!--aca arranca a exibirse los productos-->
+
+            <div id="loader" class="grid hola col-md-10   d-flex flex-wrap justify-content-evenly align-items-center">
+
+        
+                <div id="contenedor-productos">
+
+
+
+            </div>
+
+
+
+
+
+            
+        </div>
+        </div>
+    </main>
+
+
+<!--INICIO MODAL -->
+ <div class="modal-contenedor">
+
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+
+            <button id="carritoCerrar">
+                <i class="fas fa-times-circle"></i>
+            </button>
+
+            <div id="carrito-contenedor">
+               
+            </div>
+            <p class="precioProducto" id="TTT">Precio total: $<span id="precioTotal">0</span></p>
+
+            <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+            <button id="procesar-carrito" class="boton-procesar">Procesar Compra</button>
+        </div>
+        
+  </div>
+	
+<!--FIN MODAL -->	
+	
+<br>
+<footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Teléfono</h4>
+            <p>1533555400</p>
+
+        </div>
+
+        <div class="content-foo">
+            <h4>Email</h4>
+            <p>AtencionalCliente@Akiko.com.ar</p>
+
+        </div>
+
+        <div class="content-foo">
+            <h4>Dirección</h4>
+            <p>Laprida 600 Lomas de Zamora</p>
+
+        </div>
+
+
+    </div>
+    <h2 class="titulo-final"> &copy; Electrodomesticos | Akiko</h2>
+</footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+  </script>
+
+
+<script src="stock.js"></script>
+<script src="app.js"></script>
+<script src="carrito.js"></script>
+<script src="modal.js"></script>
+ <script src="compra.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>
